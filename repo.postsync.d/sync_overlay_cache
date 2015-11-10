@@ -10,5 +10,5 @@ source /lib/gentoo/functions.sh
 parallel_jobs="$(nproc)"
 
 ebegin "Updating metadata cache for ${repository_name}"
-egencache --jobs="${parallel_jobs}" --repo="${repository_name}" --update --update-use-local-desc
+su -c "egencache --jobs='${parallel_jobs}' --repo='${repository_name}' --update --update-use-local-desc" "${SYNC_USER:=root}"
 eend $?

@@ -10,8 +10,8 @@ source /lib/gentoo/functions.sh
 GLSADIR="${repository_path}"/metadata/glsa
 ebegin "Updating GLSAs"
 if [[ -e ${GLSADIR} ]]; then
-	git -C "${GLSADIR}" pull -q --ff
+	su -c "git -C '${GLSADIR}' pull -q --ff" "${SYNC_USER:=root}"
 else
-	git clone -q https://anongit.gentoo.org/git/data/glsa.git "${GLSADIR}"
+	su -c "git clone -q https://anongit.gentoo.org/git/data/glsa.git '${GLSADIR}'" "${SYNC_USER:=root}"
 fi
 eend "$?"
