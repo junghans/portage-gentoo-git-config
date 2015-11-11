@@ -10,7 +10,7 @@ source /lib/gentoo/functions.sh
 DTDDIR="${repository_path}"/metadata/dtd
 ebegin "Updating DTDs"
 if [[ -e ${DTDDIR} ]]; then
-	su -c "git -C '${DTDDIR}' pull -q --ff" "${SYNC_USER:=root}"
+	su -c "git -C '${DTDDIR}' pull -q --ff-only" "${SYNC_USER:=root}"
 else
 	su -c "git clone -q https://anongit.gentoo.org/git/data/dtd.git '${DTDDIR}'" "${SYNC_USER:=root}"
 fi

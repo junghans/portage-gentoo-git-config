@@ -10,7 +10,7 @@ source /lib/gentoo/functions.sh
 NEWSDIR="${repository_path}"/metadata/news
 ebegin "Updating news items"
 if [[ -e ${NEWSDIR} ]]; then
-	su -c "git -C '${NEWSDIR}' pull -q --ff" "${SYNC_USER:=root}"
+	su -c "git -C '${NEWSDIR}' pull -q --ff-only" "${SYNC_USER:=root}"
 else
 	su -c "git clone -q https://anongit.gentoo.org/git/data/gentoo-news.git '${NEWSDIR}'" "${SYNC_USER:=root}"
 fi
