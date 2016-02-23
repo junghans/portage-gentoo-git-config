@@ -5,7 +5,7 @@ necessary to set up a gentoo github mirror based sync system:
 * Updates metadata-cache.
 * Updates the dtd directory.
 * Updates the glsa directory.
-* Updates `herds.xml` file.
+* Updates `projects.xml` file
 * Updates the news directory.
 
 ## Notes ##
